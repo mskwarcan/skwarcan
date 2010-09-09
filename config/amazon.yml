@@ -1,0 +1,11 @@
+development:
+  bucket_name: skwarcan_development
+  access_key_id: AKIAIIZZWOHY36LZOKTA
+  secret_access_key: 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
+  distribution_domain: XXXX.cloudfront.net
+
+production:
+  bucket_name: skwarcan
+  access_key_id: AKIAIIZZWOHY36LZOKTA
+  secret_access_key: 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
+  distribution_domain: XXXX.cloudfront.net
