@@ -1,0 +1,40 @@
+<% content_for :body_content_title do %>
+  <%= @portfolio.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Title</h3>
+    <%=raw @portfolio.title %>
+  </div>
+  
+  <div>
+    <h3>Image</h3>
+    <%= image_fu @portfolio.image, nil %>
+  </div>
+  
+  <div>
+    <h3>Description</h3>
+    <%=raw @portfolio.description %>
+  </div>
+  
+  <div>
+    <h3>Date</h3>
+    <%=raw @portfolio.date %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2><%= t('.other') %></h2>
+  <ul id="portfolios">
+    <% @portfolios.each do |portfolio| %>
+      <li>
+        <%= link_to portfolio.title, portfolio_url(portfolio) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

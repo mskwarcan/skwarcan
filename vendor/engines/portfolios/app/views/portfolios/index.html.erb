@@ -1,0 +1,36 @@
+<% content_for :body_content_left do %>
+<% @portfolios = Portfolio.order("position DESC")%>
+  <ul id="portfolios">
+    <% @portfolios.each do |portfolio| %>
+      <li>
+		<a class="fancy" href="<%= portfolio.image.url %>"><%= image_fu portfolio.image, '150x150' %></a>
+        <h3><%=  portfolio.title %></h3>
+		<p><span class="highlight"><%= portfolio.tags %></span></p>
+		<div class="hide">
+		<%=raw portfolio.description %>
+		</div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% content_for :body_content_right do %>
+<h3>About Me</h3>
+<p>I am currently working full time at <a href="http://www.balcomagency.com">The Balcom Agency</a> in Fort Worth, TX as an <span class="highlight">Interactive Developer</span>. In my free time, I am either playing <span class="highlight">sports</span>, <span class="highlight">coding</span> up some personal side projects, or enjoying time spent with <span class="highlight">friends.</span><br />
+	<a href="/about">Read more</a>
+</p>
+<% @blog_posts = BlogPost.all(:limit => 3, :order => "published_at desc") %>
+<h3>Recent Posts</h3>
+<ul class="recent">
+<% @blog_posts.each do |post| %>
+	<li><%= link_to post.title, blog_post_url(post) %>
+<% end %>
+</ul>
+
+<h3>Find Me</h3>
+<a href="http://facebook.com/#!/profile.php?id=301500211"><img src="/images/facebook.png" /></a>
+<a href="http://twitter.com/mskwarcan"><img src="/images/twitter.png" /></a>
+<a href="http://www.linkedin.com/pub/michael-skwarcan/6/0/871"><img src="/images/linkedin.png" /></a>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

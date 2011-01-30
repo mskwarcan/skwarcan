@@ -1,0 +1,9 @@
+<div id='header_content'>
+  <%= link_to image_tag('../images/logoFinal.gif', :class => 'logo'), root_url(:only_path => true) %>
+  
+  <%= render :partial => "/shared/menu",
+             :locals => {
+               :dom_id => 'menu',
+               :css => 'menu'
+             } -%>
+</div>

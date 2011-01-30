@@ -1,0 +1,26 @@
+<% content_for :body_content_left do %>
+  <%= @page[Page.default_parts.first.to_sym] %>
+
+  <section id="blog_posts">
+    <%= render :partial => "/blog/shared/post", :collection => @blog_posts %>
+  </section>
+  <%= "<p>There are no blog articles posted yet. Stay tuned.</p>".html_safe unless @blog_posts.any? %>
+  <%# TODO: Add locale logic here - hubble is a n00b at that %>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h3>About Me</h3>
+	<p>I am currently working full time at <a href="http://www.balcomagency.com">The Balcom Agency</a> in Fort Worth, TX as an <span class="highlight">Interactive Developer</span>. In my free time, I am either playing <span class="highlight">sports</span>, <span class="highlight">coding</span> up some personal side projects, or enjoying time spent with <span class="highlight">friends.</span><br />
+		<a href="/about">Read more</a>
+	</p>
+
+  <%= render :partial => "/blog/shared/categories" %>
+
+	<h3>Find Me</h3>
+	<a href="http://facebook.com/#!/profile.php?id=301500211"><img src="/images/facebook.png" /></a>
+	<a href="http://twitter.com/mskwarcan"><img src="/images/twitter.png" /></a>
+	<a href="http://www.linkedin.com/pub/michael-skwarcan/6/0/871"><img src="/images/linkedin.png" /></a>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
+<% content_for :stylesheets, stylesheet_link_tag('refinerycms-blog') %>

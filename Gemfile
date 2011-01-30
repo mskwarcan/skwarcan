@@ -36,6 +36,7 @@ gem 'refinerycms',              '~> 0.9.8.5'
 
 # Specify additional Refinery CMS Engines here (all optional):
 gem 'refinerycms-inquiries',    '~> 0.9.8.8'
+gem 'refinerycms-blog',			'~> 1.1'
 # gem 'refinerycms-news',       '~> 0.9.9'
 # gem 'refinerycms-portfolio',  '~> 0.9.8'
 # gem 'refinerycms-theming',    '~> 0.9.8'
@@ -58,3 +59,5 @@ gem 'rmagick',                  '~> 2.12.0', rmagick_options
 # USER DEFINED
 
 # END USER DEFINED
+
+gem 'refinerycms-portfolios', '1.0', :path => 'vendor/engines', :require => 'portfolios'

@@ -1,0 +1,54 @@
+<% content_for :body_content_left do %>
+<p class="blurb">I'm Michael Skwarcan, a web developer &amp; designer. <span class="highlight">HTML, CSS, jQuery, Ruby (Rails and Sinatra), and PHP (Drupal, Wordpress, CodeIgniter) </span>are my specialties.</p>
+
+<% @blog_post = BlogPost.find(:first, :order => "published_at desc") %>
+<div class="latest_post">
+<h2>Latest Post</h2>
+<header>
+    <h3><%= link_to @blog_post.title, blog_post_url(@blog_post) %></h3>
+  </header>
+  <%= @blog_post.body.html_safe[0, 210] %>... <%= link_to "Read More", blog_post_url(@blog_post) %><br /><br />
+	<details>
+    <time datetime="<%= @blog_post.published_at.strftime('%Y-%m-%d') %>" class='posted_at'>
+      <%= t('blog.shared.posts.created_at', :when => @blog_post.published_at.strftime('%B %d, %Y')) %>.
+    </time>
+    <% if (categories = @blog_post.categories).any? %>
+      <aside class='filed_in'>
+        Categories:
+        <% categories.each_with_index do |category, index| %>
+            <%= link_to category.title, blog_category_url(category) -%><%= ',' if index < ((categories.length) - 1) %>
+        <% end %>
+      </aside>
+    <% end %>
+  </details>
+  
+</div>
+
+<% project = Portfolio.find(:first, :order => "position desc") %>
+<div class="latest_project">
+	<h2>Latest Project</h2>
+	<a href="<%= project.image.url %>" class="fancy"><%= image_fu project.image, '150x150' %></a>
+    <h3><%=  project.title %></h3>
+<p><span class="highlight"><%= project.tags %></span></p>
+	<%=raw project.description %>
+</div>
+<% end %>
+<% content_for :body_content_right do %>
+<h3>About Me</h3>
+<p>I am currently working full time at <a href="http://www.balcomagency.com">The Balcom Agency</a> in Fort Worth, TX as an <span class="highlight">Interactive Developer</span>. In my free time, I am either playing <span class="highlight">sports</span>, <span class="highlight">coding</span> up some personal side projects, or enjoying time spent with <span class="highlight">friends.</span><br />
+	<a href="/about">Read more</a>
+</p>
+<% @blog_posts = BlogPost.all(:limit => 3, :order => "published_at desc") %>
+<h3>Recent Posts</h3>
+<ul class="recent">
+<% @blog_posts.each do |post| %>
+	<li><%= link_to post.title, blog_post_url(post) %>
+<% end %>
+</ul>
+
+<h3>Find Me</h3>
+<a href="http://facebook.com/#!/profile.php?id=301500211"><img src="/images/facebook.png" /></a>
+<a href="http://twitter.com/mskwarcan"><img src="/images/twitter.png" /></a>
+<a href="http://www.linkedin.com/pub/michael-skwarcan/6/0/871"><img src="/images/linkedin.png" /></a>
+<% end %>
+<%= render :partial => "/shared/content_page" %>
