@@ -7,6 +7,13 @@ $(document).ready(function(){
 	$('#new_inquiry').validate();
 	$('#new_blog_comment').validate();
 	
+	$('.more').click(function (){
+		$(this).parent().siblings('.hide').animate({
+			height:'toggle'
+		}, 500);
+		return false;
+	});
+	
 	// jQuery Form Plugin options
 	var myFormOptions = {
 	  beforeSubmit:  formBeforeSubmit,

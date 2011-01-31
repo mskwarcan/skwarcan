@@ -344,6 +344,22 @@ ul#portfolios li:last-child
 	border-bottom:none;
 }
 
+.hide
+{
+	clear:left;
+	display:none;
+}
+
+.hide p
+{
+	margin:5px 0;
+}
+
+.hide p:first-child
+{
+	margin-top:0;
+}
+
 /* Blog */
 ul#categories
 {

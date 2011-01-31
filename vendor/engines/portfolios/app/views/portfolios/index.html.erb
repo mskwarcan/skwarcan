@@ -5,7 +5,9 @@
       <li>
 		<a class="fancy" href="<%= portfolio.image.url %>"><%= image_fu portfolio.image, '150x150' %></a>
         <h3><%=  portfolio.title %></h3>
-		<p><span class="highlight"><%= portfolio.tags %></span></p>
+		<p><span class="highlight"><%= portfolio.tags %></span><br />
+			<a href="#" class="more">More Details >></a>
+			</p>
 		<div class="hide">
 		<%=raw portfolio.description %>
 		</div>
