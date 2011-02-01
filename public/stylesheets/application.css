@@ -296,6 +296,33 @@ ul.recent li:last-child, ul#blog_posts li:last-child, #blog_archive_list ul li:l
 	border-bottom:none;
 }
 
+.facebook, .twitter, .linkedin
+{
+	width:50px;
+	height:50px;
+	display:inline-block;
+}
+
+.facebook
+{
+	background:url('/images/facebook.png');
+}
+
+.twitter
+{
+	background:url('/images/twitter.png');
+}
+
+.linkedin
+{
+	background:url('/images/linkedin.png');
+}
+
+.facebook:hover, .twitter:hover, .linkedin:hover
+{
+	background-position:0 -50px;
+}
+
 /* Portfolio */
 
 ul#portfolios
