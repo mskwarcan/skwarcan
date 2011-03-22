@@ -410,6 +410,11 @@ ul#categories
 	line-height:1.2 !important;
 }
 
+#comments
+{
+	padding-top:15px;
+}
+
 table td
 {
 	vertical-align:top;
