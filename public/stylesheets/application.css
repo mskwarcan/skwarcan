@@ -81,6 +81,8 @@ blockquote
 {
 	background:#222;
 	font-style:italic;
+	padding:10px 20px;
+	margin:0;
 }
 
 a
