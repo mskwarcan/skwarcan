@@ -389,6 +389,7 @@ ul#portfolios li:last-child
 {
 	clear:left;
 	display:none;
+	width:400px;
 }
 
 .hide p
