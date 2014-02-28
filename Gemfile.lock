@@ -60,6 +60,7 @@ GEM
     mime-types (1.16)
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
+    newrelic_rpm (3.7.2.195)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-cache (0.5.3)
@@ -74,7 +75,7 @@ GEM
       activerecord (= 3.0.0)
       activeresource (= 3.0.0)
       activesupport (= 3.0.0)
-      bundler (~> 1.0.0)
+      bundler (~> 1.1.4)
       railties (= 3.0.0)
     railties (3.0.0)
       actionpack (= 3.0.0)
@@ -85,7 +86,7 @@ GEM
     refinerycms (0.9.8.5)
       acts_as_indexed (~> 0.6.6)
       authlogic (~> 2.1.6)
-      bundler (~> 1.0.0)
+      bundler (~> 1.1.4)
       dragonfly (~> 0.7.5)
       friendly_id (~> 3.1.6)
       moretea-awesome_nested_set (= 1.4.3.1)
@@ -118,6 +119,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
+  newrelic_rpm
   rails (= 3.0.0)
   refinerycms (~> 0.9.8.5)
   refinerycms-blog (~> 1.1)
